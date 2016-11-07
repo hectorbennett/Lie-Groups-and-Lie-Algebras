@@ -1,0 +1,62 @@
+\section{The Matrix Exponential}
+
+\subsection{Matrix group as a metric space}
+
+\begin{defn}
+	Given a matrix $A$, a matrix norm $\norm{A}$ is a nonnegative number such that
+	\begin{easylist}[enumerate]
+		& $\norm{A} \geq 0$
+		& $\norm{A} = 0 \iff A = 0$
+		& $\norm{k \cdot A} = \abs{k}\cdot \norm{A}$ for any scalar $k$
+		& $\norm{A + B} \leq \norm{A} + \norm{B}$ (triangle inequality)
+		& $\norm{A \cdot B} \leq \norm{A} \cdot \norm{B}$
+	\end{easylist}
+\end{defn}
+
+\begin{exmp}
+	For a matrix $A \in M_n(\mathbb{F})$ we can define the matrix norm
+		\[ \norm{A} = \sum_{i,j=1}^n \abs{A_{ij}} \]
+	This allows us to view $M_n(\mathbb{F})$ as a metric space.
+	Now, just as on $\mathbb{R}^n$, we can apply notions of topology, completeness, continuity and differentiability.
+\end{exmp}
+
+\begin{defn}
+	A sequences of matrices $\{A_n\}_{n \in \mathbb{N}}$ in $M_n(\mathbb{F})$ \emph{converges} to $A$, for which we write $\lim_{n \to \infty}A_n = A$, if
+		\[\lim_{n \to \infty}\norm{A_n - A} = 0 \]
+	It can be shown that this occurs if and only if $\lim_{n \to \infty}(A_n)_{ij} = A_{ij}$
+\end{defn}
+
+\begin{defn}
+	A series $\sum_{n=0}^\infty A_n$ \emph{converges absolutely} if $\sum_{n=0}^\infty \norm{A_n}$ converges.
+	When this occurs, terms in $\sum_{n}A_n$ can be rearranged, and we can take derivatives with respect to any parameters if present.
+\end{defn}
+
+\begin{defn}
+	For a square matrix $A$ we can define its \emph{matrix exponential}
+		\[ \exp(A) = e^A = \sum_{n=0}^\infty \dfrac{1}{n!} \]
+\end{defn}
+
+\begin{prop} $\exp(A)$ satisfies
+	\begin{easylist}[enumerate]
+		& $\exp(0) = \mathbbm{1}$
+		& $\exp(A)^{-1} = \exp(-A)$
+		& If $AB = BA$ then $\exp(A+B) = \exp(A)\exp(B)$
+		& $Ce^AC^{-1} = e^{CAC^{-1}}$ for any invertible matrix $C$
+	\end{easylist}
+\end{prop}
+
+\begin{prop}
+	For any matrix $A \in M_n(\mathbb{F})$, the map $t \mapsto e^{tA}$ is a smooth curve through $\mathbbm{1}$ in $M_n(\mathbb{F})$.
+	Moreover, since $\exp(A)$ converges absolutely, we can differentiate with respect to $t$
+		\[ \od{}{t}e^{tA} = A \cdot e^{tA} = e^{tA}\cdot A \]
+	In particular
+		\[ \od{}{t}e^{tA} \Big|_{t=0} = A \]
+\end{prop}
+
+\begin{defn}
+	Given a matrix $A$, another matrix $B$ is said to be a \emph{matrix logarithm} of $A$ if $e^B = A$.
+\end{defn}
+
+\begin{prop}
+	For $\norm{A-\mathbbm{1}_N} < 1$ we have
+		\[\log(A) = - \sum_{m=1}^\infty \dfrac{(-1)^m}{m}(A - \mathbbm{1}_N) \]

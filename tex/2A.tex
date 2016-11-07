@@ -1,30 +1,15 @@
-\documentclass[]{report}
-
-\usepackage[ampersand]{easylist}
-
-\usepackage{amsmath,amsthm,amssymb,mathtools}
-
-\theoremstyle{plain}
-\newtheorem{thm}{Theorem}[chapter] % reset theorem numbering for each chapter
-
-\theoremstyle{definition}
-\newtheorem{defn}[thm]{Definition} % definition numbers are dependent on theorem numbers
-\newtheorem{exmp}[thm]{Example} % same for example numbers
-\newtheorem{lemm}[thm]{Lemma}
-
-
-\begin{document}
-
-\section{Chapter 2 - Lie algebras - general structure}
-The main aim of this chapter will be to develop some contrasting notions of \emph{solvable} and \emph{semisimple} Lie algebras. Informally, solvable Lie algebras are those that are ``nearly abelian'', which have uninteresting and unwieldy representations. semisimple Lie algebras are those which are ``far from abelian'', which have interesting representations. We will see later in chapter 4 that this second type are classifiable.
+\chapter{Lie algebra - general structure}
+The main aim of this chapter will be to develop some contrasting notions of \emph{solvable} and \emph{semisimple} Lie algebras.
+Informally, solvable Lie algebras are those that are ``nearly abelian'', which have uninteresting and unwieldy representations.
+semisimple Lie algebras are those which are ``far from abelian'', which have interesting representations.
+We will see later in chapter 4 that this second type are classifiable.
 
 Note that Representation theory will always be in sight, as this is how Lie algebras show up in perspective, and that also in a sense, solvable and semisimple Lie algebras can cover everything as any Lie algebra can be viewed as a formation of solvable and semisimple building blocks.
 
-\subsection{Basic definitions, subalgebras, ideals}
+\section{Basic definitions, subalgebras, ideals}
 
 \begin{defn}
 	A \emph{Lie algebra} $L$ is a vector space with a bilinear map \\ $[\cdot, \cdot] : L \times L \to L$, satisfying 
-	
 	\begin{easylist}[enumerate]
 		& The anti-symmetric property
 		\[ [x,y] = -[y,x] \qquad \forall x,y,z \in L \]
@@ -33,12 +18,12 @@ Note that Representation theory will always be in sight, as this is how Lie alge
 	\end{easylist}
 \end{defn} 
 
-Here we shall always take $L$ to be a finite-dimensional vector space over $\mathbb{R}$ or $\mathbb{C}$, and for now we will consider the Lie algebras Lie$(G)$ of Lie groups as $\mathbb{R}$-vector spaces.
+Here we shall always take $L$ to be a finite-dimensional vector space over $\mathbb{R}$ or $\mathbb{C}$.
+For now we will consider the Lie algebras Lie$(G)$ of Lie groups as $\mathbb{R}$-vector spaces.
 
 \begin{defn}
 	We say that a Lie algebra L is \emph{abelian} if $[\cdot,\cdot] = 0$
 \end{defn}
-
 
 Note that if $L$ has dimension 1 then $L$ is abelian, due to the property of anti-symmetry.
 
@@ -54,9 +39,10 @@ Note that if $L$ has dimension 1 then $L$ is abelian, due to the property of ant
 \begin{exmp}
 	The endomorphism group of a vector space $V$
 		\[ \text{End}(V) := \{f: V \to V \ | \ V \text{ is linear } \}\]
-	is a Lie algebra over $\mathbb{F}$ with bracket equal to the commutator of linear maps, for any $\mathbb{F}$-vector space V. We also denote this gl$(V) = $ End$(V)$
+	is a Lie algebra over $\mathbb{F}$ with bracket equal to the commutator of linear maps, for any $\mathbb{F}$-vector space V.
+	We also denote this gl$(V) = $ End$(V)$
 
-	A special case for this occurs when $V = \mathbb{F}^n$. Where gl$(V) = $ Mat$(n,\mathbb{F})$
+	A special case for this occurs when $V = \mathbb{F}^n$, where gl$(V) = $ Mat$(n,\mathbb{F})$
 \end{exmp}
 
 
@@ -105,4 +91,3 @@ If $\varphi : L_1 \to L_2$ is a morphism of Lie algebras then
 \end{lemm}
 
 See problem sheets for proof
-\end{document}
